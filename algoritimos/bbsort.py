@@ -14,11 +14,12 @@ def trocar(listaa, indice):
     listaa[indice],listaa[indice + 1] = listaa[indice + 1] , listaa[indice]
 
 
-a = [7,8,5,9,6,3,2,4,1,0]
+if __name__ == '__main__':
+    a = [7,8,5,9,6,3,2,4,1,0]
 
-b = [35,64,2]
+    b = [35,64,2]
 
-print(bubblesort(a))
+    print(bubblesort(a))
 
-print(bubblesort(b))
+    print(bubblesort(b))
 

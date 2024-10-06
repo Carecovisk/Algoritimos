@@ -1,3 +1,4 @@
+
 def heapify(arr, n, i):
     parent = i
     left = 2 * i + 1
@@ -27,8 +28,3 @@ def heap_sort(arr):
         arr[i], arr[0] = arr[0], arr[i]
 
         heapify(arr, i, 0)
-
-arr = [3, 5, 1, 2, 7, 8, 10, 4, 6, 9]
-print("Array antes: " + arr.__str__())
-heap_sort(arr)
-print("Array depois: " + arr.__str__())

@@ -1,10 +1,11 @@
-def quickSort(array,low, high):
+
+def sort(array,low, high):
     
     if (low < high):
         pivot = hoare(array, low, high)
     
-        quickSort(array,low, pivot)
-        quickSort(array, pivot+1, high)
+        sort(array,low, pivot)
+        sort(array, pivot+1, high)
 
 def hoare(a,l,h):
     pivot = a[l]
@@ -44,16 +45,20 @@ def printArray(array):
         print(array[i],end=" ")
     print()
 
+def quickSort(array):
+    sort(array, 0, len(array) - 1)
 
-a = [10,30,25,5,15]
-b = [0,0,0,0,0]
 
-print(a)
-quickSort(a,0,(len(a)-1))
+if __name__ == '__main__':
+    a = [10,30,25,5,15]
+    b = [0,0,0,0,0]
 
-printArray(a)
-print('\n')
+    print(a)
+    sort(a,0,(len(a)-1))
 
-print(b)
-quickSort(b,0, (len(b) -1))
-printArray (b)
+    printArray(a)
+    print('\n')
+
+    print(b)
+    sort(b,0, (len(b) -1))
+    printArray (b)
