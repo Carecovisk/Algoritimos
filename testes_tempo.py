@@ -1,11 +1,9 @@
 from algoritimos import *
 import matplotlib.pyplot as plt
-import timeit, sys, pandas as pd
+import timeit, pandas as pd
 import numpy as np
 
-sys.setrecursionlimit(100000)
-# Falta "iterative_quickSort",
-algoritimos = ["heap_sort", "insertionSort", "mergeSort", "selectionsort","bubblesort",]
+algoritimos = ["iterative_quickSort","heap_sort", "insertionSort", "mergeSort", "selectionsort","bubblesort",]
 inputs_size = [1_000, 10_000, 50_000, 100_000]
 inputs_ordenados_asc = []
 inputs_ordenados_dec = []
@@ -41,9 +39,4 @@ for algoritimo in algoritimos:
         result = [result_asc, result_dec, result_desordenado]
         resultados[algoritimo].append(result)
 
-pd.DataFrame(resultados).to_json('saida.json')
-# results = []
-# results.append(timeit.timeit(stmt='quickSort(inputs_desordenados[0])', globals=globals(), number=1))
-# results.append(timeit.timeit(stmt='quickSort(inputs_desordenados[1])', globals=globals(), number=1))
-# results.append(timeit.timeit(stmt='quickSort(inputs_desordenados[2])', globals=globals(), number=1))
-# results.append(timeit.timeit(stmt='quickSort(inputs_desordenados[3])', globals=globals(), number=1))
+pd.DataFrame(resultados).to_json('quick.json')
