@@ -13,7 +13,7 @@ def selectionsort(lista):
 
         trocas += 1
         lista[i], lista[imenor] = lista[imenor], lista[i]
-    return lista
+    return [comparacoes, trocas]
 
 if __name__ =='__main__':
 

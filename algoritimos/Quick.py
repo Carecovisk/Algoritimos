@@ -1,3 +1,4 @@
+comparacoes = trocas = 0
 
 def sort(array,low, high):
     

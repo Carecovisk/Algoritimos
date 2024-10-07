@@ -20,23 +20,22 @@ resultados = {}
 for algoritimo in algoritimos:
     resultados[algoritimo] = []
     for j, size in enumerate(inputs_size):
-        result = []
         # Input ordenado crecente
         stmt = f"{algoritimo}(np.copy(inputs_ordenados_asc[{j}]))"
-        times = timeit.timeit(stmt=stmt, globals=globals(), number=1)
-        result_asc = (size, 'Crecente', np.average(times))
+        time = timeit.timeit(stmt=stmt, globals=globals(), number=1)
+        result_asc = (size, 'Crecente', time)
         print(f"{algoritimo}: {result_asc}")
 
         # Input ordenado decrecente
         stmt = f"{algoritimo}(np.copy(inputs_ordenados_dec[{j}]))"
-        times = timeit.timeit(stmt=stmt, globals=globals(), number=1)
-        result_dec = (size, 'Decrecente', np.average(times))
+        time = timeit.timeit(stmt=stmt, globals=globals(), number=1)
+        result_dec = (size, 'Decrecente', time)
         print(f"{algoritimo}: {result_dec}")
 
         # Input desordenado
         stmt = f"{algoritimo}(np.copy(inputs_desordenados[{j}]))"
-        times = timeit.timeit(stmt=stmt, globals=globals(), number=1)
-        result_desordenado = (size, 'Desordenado', np.average(times))
+        time = timeit.timeit(stmt=stmt, globals=globals(), number=1)
+        result_desordenado = (size, 'Desordenado', time)
         print(f"{algoritimo}: {result_desordenado}")
 
         result = [result_asc, result_dec, result_desordenado]

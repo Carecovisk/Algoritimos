@@ -16,14 +16,10 @@ for size in inputs_size:
     inputs_ordenados_dec.append(np.arange(size, -1, -1))
     inputs_desordenados.append(np.random.randint(size, size=size))
 
+j = 0
 
-i = 0
-j = 1
-
-print(inputs_ordenados_asc[j][:10])
-
-stmt = f"{algoritimos[i]}(inputs_ordenados_asc[j])"
-# stmt = f"{algoritimos[i]}(inputs_ordenados_asc[j])"
-time = timeit.timeit(stmt=stmt, globals=globals(), number=1)
-result_asc = time
-print(f"{algoritimos[i]}: {result_asc}")
+for i in range(len(algoritimos)):
+    stmt = f"{algoritimos[i]}(inputs_desordenados[j])"
+    time = timeit.timeit(stmt=stmt, globals=globals(), number=1)
+    result_asc = time
+    print(f"{algoritimos[i]}: {result_asc}")
