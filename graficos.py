@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np, json
 
-with open('saida.json') as json_file:
+with open('tempos.json') as json_file:
     saida_json: dict = json.load(json_file)
 
 x = np.arange(saida_json['sizes']) * 8 # Posições das barras
@@ -10,8 +10,6 @@ width = 1.0
 
 del saida_json['sizes']
 for algoritimo, resultados in saida_json.items():
-    plt.cla()
-    plt.clf()
     fig, ax = plt.subplots(layout='constrained')
     resultados = np.transpose([x for x in resultados.values()])
     multiplier = 0

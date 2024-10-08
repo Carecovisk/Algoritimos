@@ -38,4 +38,4 @@ for algoritimo in algoritimos:
         result = [result_asc, result_dec, result_desordenado]
         resultados[algoritimo].append(result)
 
-pd.DataFrame(resultados).to_json('quick.json')
+pd.DataFrame(resultados).to_json('tempos.json')

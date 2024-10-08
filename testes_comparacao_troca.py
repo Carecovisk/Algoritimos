@@ -36,4 +36,4 @@ for algoritimo in algoritimos:
         result = [f"Tamanho: {size}",result_asc, result_dec, result_desordenado]
         resultados[algoritimo].append(result)
 
-pd.DataFrame(resultados).to_json('comparacoes.json')
+pd.DataFrame(resultados).to_json('comparacoes_trocas.json')
