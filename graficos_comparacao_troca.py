@@ -25,13 +25,16 @@ for algoritimo, resultados in comparacoes_trocas.items():
         trocas = [r[2] for r in resultados.loc[i]]
 
     
+        # rects = ax.bar(x + offset, comparacoes, width, label=label)
         rects = ax.barh(x + offset, trocas, width, label=label)
         ax.bar_label(rects)
         multiplier += 1.25
 
     ax.set_xlabel('Trocas')
+    # ax.set_xlabel('Comparações')
     ax.set_ylabel('Tamanho do input')
     ax.set_title(f"Numero de trocas {algoritimo}")
+    # ax.set_title(f"Numero de comparações {algoritimo}")
     ax.set_yticks(x + width * 1.25, [1_000, 10_000, 50_000, 100_000])
     ax.legend(loc='upper left', ncols=3)
     ax.invert_yaxis()
