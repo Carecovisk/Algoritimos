@@ -4,9 +4,7 @@ import numpy as np
 
 algoritimos = ["iterative_quickSort","heap_sort", "insertionSort", "mergeSort", "selectionsort","bubblesort",]
 inputs_size = [1_000, 10_000, 50_000, 100_000]
-inputs_ordenados_asc = []
-inputs_ordenados_dec = []
-inputs_desordenados = []
+inputs_ordenados_asc, inputs_ordenados_dec, inputs_desordenados = [], [], []
 
 for size in inputs_size:
     inputs_ordenados_asc.append(np.arange(size))
